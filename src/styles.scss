@@ -1,1 +1,28 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+  --main-color: #1E90FF;
+  --white: #F9FAFA;
+  --light-grey: #D5D9DD;
+  --dark-grey: #798086;
+  --dark: #2E3338;
+  height: 100vh;
+  box-sizing: border-box;
+  margin: 0;
+  font-family: Popins, sans-serif;
+
+  background-color: var(--white);
+  padding: 20px;
+}
+
+app-root {
+  height: 100%;
+}
+
+
+
+h1 {
+
+  font-size: 32px;
+  margin: 0;
+  font-weight: 600;
+  color: var(--dark);
+}
