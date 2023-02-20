@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  --primary: #1E90FF;
+  --bg-light: #D5D9DD;
+  --bg-dark: #798086;
+
+  font-family: Poppins !important;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
