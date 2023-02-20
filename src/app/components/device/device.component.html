@@ -1,0 +1,9 @@
+<div class="device-not-found" *ngIf="!device"  [@fadeInOut]>
+  <h1>Pointez un objet</h1>
+</div>
+
+<div class="device-found" *ngIf="device">
+  <h1>{{device.name}}</h1>
+  <hr/>
+  <span>Éditer l'objet</span>
+</div>

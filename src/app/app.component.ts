@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import {AndroidService} from "./services/android/android.service";
+import {animate, style, transition, trigger} from "@angular/animations";
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'pc-frontend';
+
+
+  constructor(androidService: AndroidService) {
+  }
+
+
 }
