@@ -1,6 +1,7 @@
 import {Component, Input} from '@angular/core';
 import {Device} from "../../../model/device";
 import {DeviceService} from "../../../services/device/device.service";
+import {OnOffAction} from "../../../model/action/on-off-action";
 
 @Component({
   selector: 'pc-device-control-button',
@@ -14,9 +15,10 @@ export class DeviceControlButtonComponent {
 
   }
 
-  onClick($event: any) {
-
-
+  onClick() {
+    if(this.device != null) {
+      this.deviceService.doAction(this.device?.id, new OnOffAction(false));
+    }
   }
 
 }
