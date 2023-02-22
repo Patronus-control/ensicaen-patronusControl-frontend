@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {BehaviorSubject} from "rxjs";
+import {BehaviorSubject, Observable, Subject} from "rxjs";
 import {Device} from "../../model/device";
 import {Action} from "../../model/action/action";
 import {HttpClient} from "@angular/common/http";
@@ -22,17 +22,14 @@ export class DeviceService {
   }
 
 
-  getDevice(macAddr: string): Device {
-    return {
-      id: 1,
-      mac_addr: macAddr,
-      name: "Lampe de chevet",
-      device_type: 0
-    }
+  getDevice(macAddr: string): Observable<Device> {
+    return this.http.get<Device>(environment.api_url + "/device/macAddr/" + macAddr);
   }
 
   deviceFound(deviceId: string) {
-    this.actualDevice.next(this.getDevice(deviceId));
+    this.getDevice(deviceId).subscribe((device) => {
+      this.actualDevice.next(device);
+    })
   }
 
 
