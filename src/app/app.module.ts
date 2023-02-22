@@ -9,6 +9,7 @@ import { DeviceControlComponent } from './components/device-control/device-contr
 import { DeviceControlButtonComponent } from './components/device-control/device-control-button/device-control-button.component';
 import { DeviceControlVerticalSliderComponent } from './components/device-control/device-control-vertical-slider/device-control-vertical-slider.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {ActionMenuComponent} from "./action-menu/action-menu.component";
 
 
 @NgModule({
