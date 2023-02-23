@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
+import {Device} from "../../model/device";
 
 @Component({
   selector: 'pc-action-menu',
@@ -6,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./action-menu.component.scss']
 })
 export class ActionMenuComponent {
+
+  @Input() device?: Device;
+
+
+
+
 
 }

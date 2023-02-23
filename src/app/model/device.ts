@@ -1,9 +1,12 @@
+import {Attribute} from "./enums/attribute";
+
 export interface Device {
 
-  id: number;
-  mac_addr: string;
-  name: string;
-  device_type: number;
+  id?: number;
+  macAddr: string;
+  name?: string;
+  device_type?: number;
+  stateList?: Map<Attribute, Object>
 
-
+  objectList?: Object[];
 }

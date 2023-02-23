@@ -1,0 +1,34 @@
+:host {
+  height: 100%;
+  display: grid;
+  grid-template-rows: 1fr 2fr 50px;
+  gap: 20px;
+
+
+  h3{
+    margin: 0;
+    padding: 0;
+    font-size: 1.5em;
+    font-weight: 500;
+    color: var(--dark-grey);
+  }
+
+  .associated-object {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .action-menu {
+    height: 50px;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-gap: 10px;
+
+    button {
+      height: 100%;
+    }
+  }
+
+}
+

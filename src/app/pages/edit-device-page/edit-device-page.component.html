@@ -1,0 +1,17 @@
+<ng-container *ngIf="device" >
+  <div>
+    <h1>{{device.name}}</h1>
+    <h3>{{device.macAddr}}</h3>
+  </div>
+
+  <div class="associated-object">
+    <h2>Objets associés :</h2>
+    <pc-object-list [deviceId]="device.id"></pc-object-list>
+  </div>
+
+
+  <div class="action-menu">
+    <pc-button [icon]="'arrow_back'" routerLink="/"></pc-button>
+    <pc-button [text]="'Supprimer l\'objet'"></pc-button>
+  </div>
+</ng-container>

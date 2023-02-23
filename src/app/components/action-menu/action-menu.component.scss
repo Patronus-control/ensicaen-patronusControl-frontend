@@ -1,0 +1,19 @@
+:host {
+  grid-row: 3 / span 1;
+
+  .action-menu {
+    height: 50px;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    gap: 10px;
+
+    &.add {
+      grid-template-columns: 1fr 3fr;
+
+    }
+  }
+
+
+}
+

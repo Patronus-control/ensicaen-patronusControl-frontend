@@ -1,9 +1,12 @@
-<div class="device-not-found" *ngIf="!device"  [@fadeInOut]>
+<div class="device-not-found" *ngIf="!device"  @fadeInOut>
   <h1>Pointez un objet</h1>
 </div>
+<div class="new-device-found" *ngIf="device && device.id == undefined" @fadeInOut>
+  <h1>Nouvel objet détecté</h1>
+</div>
 
-<div class="device-found" *ngIf="device">
+<div class="device-found" *ngIf="device && device.id != undefined" @fadeInOut>
   <h1>{{device.name}}</h1>
   <hr/>
-  <span>Éditer l'objet</span>
+  <span routerLink="/edit/device/{{device?.id}}">Éditer l'objet</span>
 </div>

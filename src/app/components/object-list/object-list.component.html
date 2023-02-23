@@ -1,0 +1,3 @@
+<div class="container">
+    <pc-object-item *ngFor="let object of objectList" [object]="object" (click)="selectObject(object)" [isActive]="this.selectedObjectList.includes(object)" ></pc-object-item>
+</div>

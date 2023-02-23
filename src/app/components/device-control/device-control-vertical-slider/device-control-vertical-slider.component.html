@@ -1,4 +1,4 @@
-<div class="container" (click)="onClick($event)">
+<div class="container" (pointerdown)="mouseDown()" (pointermove)="mousePosition($event)" [ngClass]="mouseTracking ? 'click' : ''">
   <div class="slider" [style.height.px]="sliderHeight"></div>
   <span class="material-symbols-rounded">
 sunny

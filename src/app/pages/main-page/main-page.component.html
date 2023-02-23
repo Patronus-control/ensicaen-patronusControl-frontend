@@ -1,4 +1,4 @@
 <pc-device [device]="device"></pc-device>
-<pc-device-control *ngIf="device" [device]="device" [@fadeInOut]></pc-device-control>
-<pc-action-menu></pc-action-menu>
+<pc-device-control *ngIf="device && device.id != undefined" [device]="device" @fadeInOut></pc-device-control>
+<pc-action-menu [device]="device"></pc-action-menu>
 

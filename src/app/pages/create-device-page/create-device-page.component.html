@@ -1,0 +1,17 @@
+<div>
+  <h2>Nom de l'appareil : </h2>
+  <input type="text" [(ngModel)]="device.name">
+
+
+</div>
+
+<div class="associated-object">
+  <h2>Objets associés :</h2>
+  <pc-object-list [editMode]="true" (selectedObjectListEvent)="updateObjectList($event)"></pc-object-list>
+</div>
+
+
+<div class="action-menu">
+  <pc-button [icon]="'arrow_back'" routerLink="/"></pc-button>
+  <pc-button [text]="'Valider'" (click)="createDevice()"></pc-button>
+</div>
