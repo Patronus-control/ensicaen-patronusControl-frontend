@@ -27,4 +27,4 @@ jobs:
       - run: npm install
       - run: npm ci
       - name: building the project to production
-        run: ng build --prod --output-path="/var/www/html/"
+        run: ng build --output-path="/var/www/html/"
