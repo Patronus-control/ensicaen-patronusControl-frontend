@@ -1,8 +1,20 @@
 :host {
   grid-row: span 3;
   grid-column: span 1;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .container.click {
+    //height: 105%;
+  }
 
   & > .container {
+    transition: all 200ms ease-in-out;
+
+    overflow: hidden;
     height: 100%;
     width: 100%;
     position: relative;
@@ -13,8 +25,8 @@
     border-radius: 20px;
     background-color: var(--light-grey);
     color: var(--white);
+    user-select: none;
 
-    box-sizing: content-box;
 
     .slider {
       pointer-events: none;
@@ -26,6 +38,7 @@
       background-color: var(--main-color);
       border-radius: 20px;
       bottom: 0;
+      transition: all 50ms ease-in-out;
     }
 
     span {

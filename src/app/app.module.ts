@@ -9,7 +9,14 @@ import { DeviceControlComponent } from './components/device-control/device-contr
 import { DeviceControlButtonComponent } from './components/device-control/device-control-button/device-control-button.component';
 import { DeviceControlVerticalSliderComponent } from './components/device-control/device-control-vertical-slider/device-control-vertical-slider.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {ActionMenuComponent} from "./action-menu/action-menu.component";
+import {HttpClientModule} from "@angular/common/http";
+import {ActionMenuComponent} from "./components/action-menu/action-menu.component";
+import { ObjectItemComponent } from './components/object-item/object-item.component';
+import { EditDevicePageComponent } from './pages/edit-device-page/edit-device-page.component';
+import { ButtonComponent } from './components/button/button.component';
+import { ObjectListComponent } from './components/object-list/object-list.component';
+import { CreateDevicePageComponent } from './pages/create-device-page/create-device-page.component';
+import {FormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -21,12 +28,19 @@ import {ActionMenuComponent} from "./action-menu/action-menu.component";
     DeviceControlButtonComponent,
     DeviceControlVerticalSliderComponent,
     AppComponent,
-    ActionMenuComponent
+    ActionMenuComponent,
+    ObjectItemComponent,
+    EditDevicePageComponent,
+    ButtonComponent,
+    ObjectListComponent,
+    CreateDevicePageComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule,
+    FormsModule,
   ],
   providers: [{provide: 'Window', useValue: window}],
   bootstrap: [AppComponent]

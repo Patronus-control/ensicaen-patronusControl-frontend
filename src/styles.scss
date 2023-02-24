@@ -26,3 +26,23 @@ h1 {
   font-weight: 600;
   color: var(--dark);
 }
+
+input {
+
+  border: var(--dark-grey) solid 1px;
+  border-radius: 5px;
+  height: 50px;
+  font-family: Popins, sans-serif;
+  font-size: 16px;
+
+  padding: 0 10px ;
+  width: 100%;
+  box-sizing: border-box;
+
+  &:hover {
+    outline-color: var(--main-color);
+  }
+
+}
+
+*{ touch-action: none; }

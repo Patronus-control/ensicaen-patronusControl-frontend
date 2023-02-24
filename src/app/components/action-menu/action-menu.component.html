@@ -1,0 +1,5 @@
+<div class="action-menu" [ngClass]="device != undefined && device.id == undefined ? 'add' : ''" >
+
+  <pc-button *ngIf="device != undefined && device.id == undefined" [icon]="'add'"  routerLink="/create/device/{{device?.macAddr}}"></pc-button>
+  <pc-button [text]="'Mes appareils'"></pc-button>
+</div>
