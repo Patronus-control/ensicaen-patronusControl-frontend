@@ -1,7 +1,10 @@
 import {Component} from '@angular/core';
 import {Device} from "../../model/device";
 import {DeviceService} from "../../services/device/device.service";
-import {ActivatedRoute, Router} from "@angular/router";
+import {Router} from "@angular/router";
+import {DeviceSearchModeService} from "../../services/device-search-mode/device-search-mode.service";
+import {DeviceSearchModeEnum} from "../../services/device-search-mode/device-search-mode-enum";
+import {AndroidService} from "../../services/android/android.service";
 
 @Component({
   selector: 'pc-create-device-page',
@@ -14,25 +17,41 @@ export class CreateDevicePageComponent {
 
 
   constructor(private deviceService: DeviceService,
-              private route: ActivatedRoute,
-              private router: Router) {
-    this.device = {
-      macAddr: String(this.route.snapshot.paramMap.get('macAddr')),
+              private router: Router,
+              private deviceSearchModeService: DeviceSearchModeService,
+              private androidService: AndroidService) {
+
+    switch (this.deviceSearchModeService.getDeviceSearchMode()) {
+      case DeviceSearchModeEnum.BEACON:
+        this.device = {
+          point: androidService.lastCoord,
+        }
+        break;
+      case DeviceSearchModeEnum.POINTER:
+      default:
+        if(this.deviceService.actualDevice.value != null){
+          this.device = this.deviceService.actualDevice.value;
+        } else {
+          this.device = {};
+        }
+        break;
     }
+
   }
 
 
   createDevice() {
-    this.deviceService.createDevice(this.device).subscribe((device) => {
-      this.router.navigate(['/edit/device/' + device.id]);
-    });
-
-
+    if (this.device != null) {
+      this.deviceService.createDevice(this.device).subscribe((device) => {
+        this.router.navigate(['/edit/device/' + device.id]);
+      });
+    }
   }
 
 
   updateObjectList($event: Object[]) {
-    this.device.objectList = $event;
-    console.log(this.device.objectList);
+    if (this.device != null) {
+      this.device.objectList = $event;
+    }
   }
 }

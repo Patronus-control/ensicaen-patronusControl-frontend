@@ -8,15 +8,7 @@
     height: 100%;
   }
 
-  .device-not-found {
-    position: absolute;
-    h1 {
-      color: var(--dark-grey);
-    }
-  }
-
-
-  .device-found {
+  .device-found, .device-not-found {
 
 
 
@@ -40,6 +32,15 @@
 
 
   }
+
+  .device-not-found {
+    position: absolute;
+    h1, span {
+      color: var(--dark-grey);
+    }
+
+  }
+
 
 
 

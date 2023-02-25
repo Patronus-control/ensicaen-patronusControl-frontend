@@ -6,7 +6,7 @@ import {CreateDevicePageComponent} from "./pages/create-device-page/create-devic
 
 const routes: Routes = [
   { path: '', component: MainPageComponent },
-  { path: 'create/device/:macAddr', component: CreateDevicePageComponent},
+  { path: 'create/device', component: CreateDevicePageComponent},
   { path: 'edit/device/:id', component: EditDevicePageComponent}
 ];
 

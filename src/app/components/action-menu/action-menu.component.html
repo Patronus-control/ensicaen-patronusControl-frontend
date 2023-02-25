@@ -1,5 +1,5 @@
-<div class="action-menu" [ngClass]="device != undefined && device.id == undefined ? 'add' : ''" >
+<div class="action-menu" [ngClass]="this.deviceSearchModeService.canAddDevice ? 'add' : ''" >
 
-  <pc-button *ngIf="device != undefined && device.id == undefined" [icon]="'add'"  routerLink="/create/device/{{device?.macAddr}}"></pc-button>
+  <pc-button *ngIf="this.deviceSearchModeService.canAddDevice" [icon]="'add'"  routerLink="/create/device/"></pc-button>
   <pc-button [text]="'Mes appareils'"></pc-button>
 </div>

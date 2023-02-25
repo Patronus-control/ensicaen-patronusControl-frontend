@@ -41,13 +41,13 @@ export class DeviceService {
 
 
   createDevice(device: Device): Observable<Device> {
-    return this.http.post<Device>(environment.api_url + "/device/",device);
+    return this.http.post<Device>(environment.api_url + "/device/", device);
   }
 
 
   doAction(id: number, action: Action) {
     this.http.post<Device>(environment.api_url + "/device/action/" + id, action).subscribe((device) => {
-        this.actualDevice.next(device);
+      this.actualDevice.next(device);
     });
   }
 
@@ -57,5 +57,13 @@ export class DeviceService {
 
   getObjectList(deviceId: number): Observable<Object[]> {
     return this.http.get<Object[]>(environment.api_url + "/device/get-object/" + deviceId);
+  }
+
+  findByCoordinates(x: number, y: number, ang: number) {
+    this.http.get<Device>(environment.api_url + "/device/find-by-coordinates/" + x + "/" + y + "/" + ang).subscribe((device) => {
+      if (device != null) {
+        this.actualDevice.next(device);
+      }
+    })
   }
 }

@@ -1,5 +1,7 @@
 <div class="device-not-found" *ngIf="!device"  @fadeInOut>
   <h1>Pointez un objet</h1>
+  <hr/>
+  <span>Mode de recherche : {{this.deviceSearchModeService.getDeviceSearchModeName()}}  </span>
 </div>
 <div class="new-device-found" *ngIf="device && device.id == undefined" @fadeInOut>
   <h1>Nouvel objet détecté</h1>
